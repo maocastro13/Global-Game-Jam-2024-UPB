@@ -25,7 +25,6 @@ public class PlayerHealth : MonoBehaviour
             if(timerStop > timeSeconds)
             {
                 timeSeconds = timeSeconds + 1f;
-                Debug.Log(currentHealth);
                 TakeDamage(20);
             }
         }

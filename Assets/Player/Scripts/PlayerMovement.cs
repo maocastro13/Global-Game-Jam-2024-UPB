@@ -16,10 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private float verticalVelocity;  // velocidad vertical del jugador
 
+    private PlayerStamina playerStamina;
+
     public bool isPlayerStop = false;
 
     void Start()
     {
+        playerStamina = GameObject.Find("Player").GetComponent<PlayerStamina>();
         characterController = GetComponent<CharacterController>();
     }
 
@@ -28,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        if(horizontalInput == 0 && verticalInput == 0)
+        if (horizontalInput == 0 && verticalInput == 0)
         {
             isPlayerStop = true;
         }
@@ -38,6 +41,24 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            if (playerStamina.currentStamina > 1)
+            {
+                Debug.Log(playerStamina.currentStamina);
+                playerStamina.currentStamina -= 0.1f;
+            }
+        }
+        else
+        {
+            if(playerStamina.currentStamina < 100f)
+            {
+                Debug.Log(playerStamina.currentStamina);
+                runSpeed = 10f;
+                playerStamina.currentStamina += 0.5f;
+            }
+        }
 
         // Calcula la dirección de movimiento basándose en la rotación de la cámara
         moveDirection = new Vector3(horizontalInput, 0, verticalInput);
