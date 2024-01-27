@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection = Vector3.zero;
     private float verticalVelocity;  // velocidad vertical del jugador
 
+    public bool isPlayerStop = false;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -25,6 +27,16 @@ public class PlayerMovement : MonoBehaviour
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+
+        if(horizontalInput == 0 && verticalInput == 0)
+        {
+            isPlayerStop = true;
+        }
+        else
+        {
+            isPlayerStop = false;
+        }
+
         float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;
 
         // Calcula la dirección de movimiento basándose en la rotación de la cámara
@@ -50,6 +62,11 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.y = verticalVelocity;
 
         characterController.Move(moveDirection * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject.Find("Player").GetComponent<PlayerHealth>().Die();
     }
 }
 

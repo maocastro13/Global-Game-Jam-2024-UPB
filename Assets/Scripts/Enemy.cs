@@ -31,12 +31,12 @@ public class Enemy : MonoBehaviour
             enemy.speed = 0;
             StartCoroutine(ActiveEnemy());
         }
-        
     }
 
     IEnumerator ActiveEnemy()
     {
+        yield return new WaitForSeconds(10f);
         timer = 10f;
-        yield return null;
+        
     }
 }
