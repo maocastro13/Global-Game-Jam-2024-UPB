@@ -23,10 +23,13 @@ public class PlayerMovement : MonoBehaviour
     public AudioClip[] clipsSteps;
     private float speedSteps = 1f;
 
+    public GameManager gameManager;
+
     void Start()
     {
         playerStamina = GameObject.Find("Player").GetComponent<PlayerStamina>();
         characterController = GetComponent<CharacterController>();
+        gameManager = GetComponent<GameManager>();
     }
 
     float timer = 0f;
@@ -116,6 +119,14 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         GameObject.Find("AudioManager").GetComponent<GestionSonidosAmbientales>().ReproducirSonido(0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Win")
+        {
+            gameManager.Win();
+        }
     }
 }
 

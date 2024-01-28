@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private bool isPause = false;
 
     public GameObject pausePanel;
+    public GameObject winPanel;
 
     private void Update()
     {
@@ -36,5 +37,11 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
+    }
+
+    public void Win()
+    {
+        Time.timeScale = 0;
+        winPanel.SetActive(true);
     }
 }
