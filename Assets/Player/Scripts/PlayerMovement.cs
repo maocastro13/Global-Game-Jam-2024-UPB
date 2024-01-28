@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 // 2024-01-27 AI-Tag 
 // This was created with assistance from Muse, a Unity Artificial Intelligence product
@@ -21,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isPlayerStop = false;
 
+    public AudioClip[] clipsSteps;
+    private float speedSteps = 1f;
+
     void Start()
     {
         playerStamina = GameObject.Find("Player").GetComponent<PlayerStamina>();
@@ -34,21 +36,23 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        timer += Time.deltaTime;
+        
 
         if (horizontalInput == 0 && verticalInput == 0)
         {
             isPlayerStop = true;
-            GameObject.Find("AudioManager").GetComponent<GestionSonidosAmbientales>().fuenteAudio.Pause();
+            timer = 0f;
         }
         else
         {
+            timer += Time.deltaTime;
+
             isPlayerStop = false;
 
-            if(timer > 2.5f)
+            if(timer > speedSteps)
             {
-                Debug.Log("Entre");
-                GameObject.Find("AudioManager").GetComponent<GestionSonidosAmbientales>().OneShotClipSteeps();
+                int inx = Random.Range(0, 5);
+                GetComponent<AudioSource>().PlayOneShot(clipsSteps[inx]);
                 timer = 0f;
             }
             
@@ -58,17 +62,18 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            speedSteps = 0.5f;
+
             if (playerStamina.currentStamina > 1)
             {
-                Debug.Log(playerStamina.currentStamina);
                 playerStamina.currentStamina -= 0.1f;
             }
         }
         else
         {
-            if(playerStamina.currentStamina < 100f)
+            speedSteps = 1f;
+            if (playerStamina.currentStamina < 100f)
             {
-                Debug.Log(playerStamina.currentStamina);
                 runSpeed = 10f;
                 playerStamina.currentStamina += 0.5f;
             }
@@ -101,7 +106,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject.Find("Player").GetComponent<PlayerHealth>().Die();
+        if(collision.gameObject.tag == "Enemy")
+        {
+            GameObject.Find("Player").GetComponent<PlayerHealth>().Die();
+        }
     }
 
     IEnumerator WaitClip()
