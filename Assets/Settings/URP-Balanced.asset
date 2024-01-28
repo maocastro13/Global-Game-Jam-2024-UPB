@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   k_AssetVersion: 11
   k_AssetPreviousVersion: 11
+  k_AssetVersion: 11
+  k_AssetPreviousVersion: 11
   m_RendererType: 1
   m_RendererData: {fileID: 0}
   m_RendererDataList:
@@ -25,8 +27,15 @@ MonoBehaviour:
   m_SupportsTerrainHoles: 1
   m_SupportsHDR: 1
   m_HDRColorBufferPrecision: 0
+  m_HDRColorBufferPrecision: 0
   m_MSAA: 1
   m_RenderScale: 1
+  m_UpscalingFilter: 0
+  m_FsrOverrideSharpness: 0
+  m_FsrSharpness: 0.92
+  m_EnableLODCrossFade: 1
+  m_LODCrossFadeDitheringType: 1
+  m_ShEvalMode: 0
   m_UpscalingFilter: 0
   m_FsrOverrideSharpness: 0
   m_FsrSharpness: 0.92
@@ -54,7 +63,11 @@ MonoBehaviour:
   m_ShadowDepthBias: 1
   m_ShadowNormalBias: 1
   m_AnyShadowsSupported: 1
+  m_AnyShadowsSupported: 1
   m_SoftShadowsSupported: 1
+  m_ConservativeEnclosingSphere: 0
+  m_NumIterationsEnclosingSphere: 64
+  m_SoftShadowQuality: 2
   m_ConservativeEnclosingSphere: 0
   m_NumIterationsEnclosingSphere: 64
   m_SoftShadowQuality: 2
@@ -64,14 +77,18 @@ MonoBehaviour:
   m_SupportsDynamicBatching: 0
   m_MixedLightingSupported: 1
   m_SupportsLightCookies: 1
+  m_SupportsLightCookies: 1
   m_SupportsLightLayers: 0
   m_DebugLevel: 0
+  m_StoreActionsOptimization: 0
+  m_EnableRenderGraph: 0
   m_StoreActionsOptimization: 0
   m_EnableRenderGraph: 0
   m_UseAdaptivePerformance: 1
   m_ColorGradingMode: 0
   m_ColorGradingLutSize: 32
   m_UseFastSRGBLinearConversion: 0
+  m_SupportDataDrivenLensFlare: 1
   m_SupportDataDrivenLensFlare: 1
   m_ShadowType: 1
   m_LocalShadowsSupported: 0
