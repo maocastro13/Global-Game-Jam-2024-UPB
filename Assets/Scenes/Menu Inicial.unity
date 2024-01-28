@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 193420091}
   - component: {fileID: 193420090}
   - component: {fileID: 193420089}
+  - component: {fileID: 193420092}
   m_Layer: 5
   m_Name: Controles
   m_TagString: Untagged
@@ -332,6 +333,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193420087}
   m_CullTransparentMesh: 1
+--- !u!114 &193420092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193420087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b161fabc59d0914c9dbe9e09b4c27fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &280499693
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +466,7 @@ GameObject:
   - component: {fileID: 356245410}
   - component: {fileID: 356245409}
   - component: {fileID: 356245412}
+  - component: {fileID: 356245413}
   m_Layer: 5
   m_Name: Jugar
   m_TagString: Untagged
@@ -583,6 +600,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 039688e63f3215d4aa8cd3477a9ad2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &356245413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356245407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b161fabc59d0914c9dbe9e09b4c27fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &430649055
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +627,7 @@ GameObject:
   - component: {fileID: 430649059}
   - component: {fileID: 430649058}
   - component: {fileID: 430649057}
+  - component: {fileID: 430649060}
   m_Layer: 5
   m_Name: Credits
   m_TagString: Untagged
@@ -716,6 +749,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430649055}
   m_CullTransparentMesh: 1
+--- !u!114 &430649060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430649055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b161fabc59d0914c9dbe9e09b4c27fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &631783540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1472,7 @@ GameObject:
   - component: {fileID: 1102737545}
   - component: {fileID: 1102737544}
   - component: {fileID: 1102737543}
+  - component: {fileID: 1102737546}
   m_Layer: 5
   m_Name: Boton Cerrar
   m_TagString: Untagged
@@ -1544,6 +1593,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102737541}
   m_CullTransparentMesh: 1
+--- !u!114 &1102737546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102737541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b161fabc59d0914c9dbe9e09b4c27fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &1111535641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,6 +2023,7 @@ GameObject:
   - component: {fileID: 1543134795}
   - component: {fileID: 1543134794}
   - component: {fileID: 1543134793}
+  - component: {fileID: 1543134796}
   m_Layer: 5
   m_Name: Boton Cerrar
   m_TagString: Untagged
@@ -2079,6 +2144,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543134791}
   m_CullTransparentMesh: 1
+--- !u!114 &1543134796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543134791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b161fabc59d0914c9dbe9e09b4c27fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverSound: {fileID: 0}
+  clickSound: {fileID: 0}
+  source: {fileID: 0}
 --- !u!1 &2036056959
 GameObject:
   m_ObjectHideFlags: 0

@@ -199,14 +199,10 @@ MonoBehaviour:
   - {fileID: 698173118343518868}
   - {fileID: 6527457207044578943}
   - {fileID: 3837346177427838331}
-  jugador: {fileID: 0}
-  distanciaCerca: 5
-  fuentesAudioLejos:
-  - {fileID: 6597635715313049048}
-  - {fileID: 7417837051474228978}
-  fuentesAudioCerca:
-  - {fileID: 5336561915161591967}
-  - {fileID: 403526803360625679}
+  cerca0: {fileID: 5336561915161591967}
+  cerca1: {fileID: 403526803360625679}
+  lejos0: {fileID: 6597635715313049048}
+  lejos1: {fileID: 7417837051474228978}
 --- !u!114 &6527457207044578943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,8 +225,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 731c71ca9b837df4bb1041306d4ec147, type: 3}
   - {fileID: 8300000, guid: 16c05e160ad381940885bc82bb88dbca, type: 3}
   - {fileID: 8300000, guid: 420b880e2b95b87498f2a6125a342117, type: 3}
-  - {fileID: 8300000, guid: d76f9ef58a5e1de4bbca1d54f8a8eba6, type: 3}
-  - {fileID: 8300000, guid: ec272554be6c36d43a3ad5d06754996f, type: 3}
 --- !u!114 &3837346177427838331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,8 +247,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 423a4cfb0c24d0e4c8e3fedb2d7bb609, type: 3}
   - {fileID: 8300000, guid: 6a1030996a40fef49a39391164069a1d, type: 3}
   - {fileID: 8300000, guid: 27a4749f9f05d91449f2c3d6d40ecb04, type: 3}
-  - {fileID: 8300000, guid: 864f30ec352bbb54ea169c0ef93c0c4e, type: 3}
-  - {fileID: 8300000, guid: c28d59e94a3eaf643805e6b8d7aad53a, type: 3}
 --- !u!114 &6964937939735315640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +269,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2160a9d5a505f6b4c974cd7e98f3559b, type: 3}
   - {fileID: 8300000, guid: 7c06907bb8b22e84caa3daf840bdd659, type: 3}
   - {fileID: 8300000, guid: c2de0ec347b57a4489390cf3bdfa909d, type: 3}
-  - {fileID: 8300000, guid: fbd68e8836c7af84ab5b4c15d1077e74, type: 3}
 --- !u!114 &698173118343518868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +302,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -320,13 +311,13 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 6
+  MaxDistance: 12
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -407,7 +398,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -416,13 +407,13 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 6
+  MaxDistance: 12
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -503,22 +494,22 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -599,22 +590,22 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 0
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 0
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
