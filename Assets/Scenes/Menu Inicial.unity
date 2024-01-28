@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 356245411}
   - component: {fileID: 356245410}
   - component: {fileID: 356245409}
+  - component: {fileID: 356245412}
   m_Layer: 5
   m_Name: Jugar
   m_TagString: Untagged
@@ -519,7 +520,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 356245410}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 356245412}
+        m_TargetAssemblyTypeName: SceneManager2, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Build
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &356245410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -558,6 +571,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356245407}
   m_CullTransparentMesh: 1
+--- !u!114 &356245412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356245407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039688e63f3215d4aa8cd3477a9ad2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &430649055
 GameObject:
   m_ObjectHideFlags: 0
