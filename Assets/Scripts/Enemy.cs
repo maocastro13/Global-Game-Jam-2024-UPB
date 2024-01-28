@@ -6,37 +6,22 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     private Transform player;
-    private NavMeshAgent enemy;
-    private float timer = 10f;
+    public NavMeshAgent enemy;
+    //public bool followPlayer = false;
 
-    void Awake()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         enemy = this.GetComponent<NavMeshAgent>();
-        enemy.speed = 0;
+        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-
-        if(timer > 0)
-        {
-            enemy.speed = timer;
+        //if(followPlayer == true)
+        //{
             enemy.SetDestination(player.transform.position);
-        }
-        else
-        {
-            enemy.speed = 0;
-            StartCoroutine(ActiveEnemy());
-        }
-    }
-
-    IEnumerator ActiveEnemy()
-    {
-        yield return new WaitForSeconds(10f);
-        timer = 10f;
-        
+        //}
     }
 }
