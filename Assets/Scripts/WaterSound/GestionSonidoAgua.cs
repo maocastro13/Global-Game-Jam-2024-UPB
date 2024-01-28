@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GestionSonidoAgua : MonoBehaviour
@@ -10,13 +11,13 @@ public class GestionSonidoAgua : MonoBehaviour
  
     public AudioSource ahogandoseDerecho;
 
-
+/*
     public List<bool> aguaLejosDerechoBools = new List<bool>();
     
     public List<bool> aguaCercaDerechoBools = new List<bool>();
 
     public List<bool> ahogandoseDerechoBools = new List<bool>();
- 
+ */
 
     public static GestionSonidoAgua Instance;
 
@@ -25,26 +26,51 @@ public class GestionSonidoAgua : MonoBehaviour
       Instance = this;
     }
 
-    public void EntraZonaAgua(AudioSource fuenteAudio, List<bool> listaBoolsFuenteAudio)
+    public void EntraZonaAgua(AudioSource fuenteAudio)
     {
-        if(listaBoolsFuenteAudio == null)
-        {
-            listaBoolsFuenteAudio.Add(true);
             fuenteAudio.Play();
+
+        if(fuenteAudio== aguaLejosDerecho)
+        {
+            aguaCercaDerecho.Stop();
+            ahogandoseDerecho.Stop();
         }
+
+        if(fuenteAudio== aguaCercaDerecho)
+        {
+            if (!aguaLejosDerecho.isPlaying)
+            {
+                aguaLejosDerecho.Play();
+            }
+            ahogandoseDerecho.Stop();
+        }
+
+        if (fuenteAudio == ahogandoseDerecho)
+        {
+            aguaCercaDerecho.Stop();
+            aguaLejosDerecho.Stop();
+        }
+    }
+
+    public void SalirZonaAgua(AudioSource fuenteAudio)
+    {
+        if (fuenteAudio == aguaCercaDerecho && aguaCercaDerecho.isPlaying)
+        {
+            return;
+        }
+
         else
         {
-            listaBoolsFuenteAudio.Add(true);
+            fuenteAudio.Stop();
         }
+
+       
+        //listaBoolsFuenteAudio.Remove(true);
+       // RevisarEstadoSonido(fuenteAudio, listaBoolsFuenteAudio);
+        //SolucionarSuperposicion();
     }
 
-    public void SalirZonaAgua(AudioSource fuenteAudio, List<bool> listaBoolsFuenteAudio)
-    {
-        listaBoolsFuenteAudio.Remove(true);
-        RevisarEstadoSonido(fuenteAudio, listaBoolsFuenteAudio);
-        SolucionarSuperposicion();
-    }
-
+    /*
     private void RevisarEstadoSonido(AudioSource fuenteAudio, List<bool> listaBoolsFuenteAudio )
     {
         if (listaBoolsFuenteAudio == null)
@@ -58,6 +84,7 @@ public class GestionSonidoAgua : MonoBehaviour
         }
     }
 
+   
     private void SolucionarSuperposicion()
     {
         if(ahogandoseDerecho.isPlaying && aguaCercaDerecho.isPlaying)
@@ -75,6 +102,7 @@ public class GestionSonidoAgua : MonoBehaviour
                 aguaLejosDerecho.Stop();
         }
     }
+    
 
     private void ReversarSoluciónSuperposición()
     {
@@ -88,5 +116,7 @@ public class GestionSonidoAgua : MonoBehaviour
             aguaLejosDerecho.Play();
         }
     }
+
+    */
     
 }

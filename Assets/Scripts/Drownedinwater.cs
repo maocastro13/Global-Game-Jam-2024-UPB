@@ -84,17 +84,17 @@ public class Drownedinwater : MonoBehaviour
      if (tagWater == "Water1")
         {
             Debug.Log("aqui va la llamada de la funcion del sonido Water1");
-             GestionSonidoAgua.Instance.EntraZonaAgua(GestionSonidoAgua.Instance.aguaLejosDerecho, GestionSonidoAgua.Instance.aguaLejosDerechoBools);
+             GestionSonidoAgua.Instance.EntraZonaAgua(GestionSonidoAgua.Instance.aguaLejosDerecho);
         }
      else if( tagWater == "Water2")
         {
             Debug.Log("aquí va la llamada de la funcion del sonido Water2");
-            GestionSonidoAgua.Instance.EntraZonaAgua(GestionSonidoAgua.Instance.aguaCercaDerecho, GestionSonidoAgua.Instance.aguaCercaDerechoBools);
+            GestionSonidoAgua.Instance.EntraZonaAgua(GestionSonidoAgua.Instance.aguaCercaDerecho);
         }
      else if(tagWater == "Water3")
         {
             Debug.Log("aqui va la llamada de la funcion del sonido y  la llamada a la la funcion que resetea la vida del jugador ");
-            GestionSonidoAgua.Instance.EntraZonaAgua(GestionSonidoAgua.Instance.ahogandoseDerecho, GestionSonidoAgua.Instance.ahogandoseDerechoBools);
+            GestionSonidoAgua.Instance.EntraZonaAgua(GestionSonidoAgua.Instance.ahogandoseDerecho);
             isOnWater3Platform = true;
         }
     }
@@ -108,18 +108,18 @@ public class Drownedinwater : MonoBehaviour
         if (tagWater == "Water1")
         {
             Debug.Log("aqui va la llamada de la funcion del sonido cuando deja de tocar Water1 ");
-            GestionSonidoAgua.Instance.SalirZonaAgua(GestionSonidoAgua.Instance.aguaLejosDerecho, GestionSonidoAgua.Instance.aguaLejosDerechoBools);   
+            GestionSonidoAgua.Instance.SalirZonaAgua(GestionSonidoAgua.Instance.aguaLejosDerecho);   
         }
         else if (tagWater == "Water2")
         {
             Debug.Log("aqui va la llamada de la funcion del sonido cuando deja de tocar Water2 ");
-            GestionSonidoAgua.Instance.SalirZonaAgua(GestionSonidoAgua.Instance.aguaCercaDerecho, GestionSonidoAgua.Instance.aguaCercaDerechoBools);
+            GestionSonidoAgua.Instance.SalirZonaAgua(GestionSonidoAgua.Instance.aguaCercaDerecho);
         }
         else if (tagWater == "Water3")
         {
             Debug.Log("aqui va la llamada de la funcion del sonido cuando deja de tocar Water3");
             isOnWater3Platform = false;
-            GestionSonidoAgua.Instance.SalirZonaAgua(GestionSonidoAgua.Instance.ahogandoseDerecho, GestionSonidoAgua.Instance.ahogandoseDerechoBools);
+            GestionSonidoAgua.Instance.SalirZonaAgua(GestionSonidoAgua.Instance.ahogandoseDerecho);
         }
     }
 
