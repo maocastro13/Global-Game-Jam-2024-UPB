@@ -7,6 +7,9 @@ TagManager:
   - Water1
   - Water2
   - Water3
+  - Wall1
+  - Wall
+  - WaterSounds
   layers:
   - Default
   - TransparentFX
