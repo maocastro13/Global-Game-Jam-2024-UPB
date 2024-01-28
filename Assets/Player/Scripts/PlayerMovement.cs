@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 // 2024-01-27 AI-Tag 
 // This was created with assistance from Muse, a Unity Artificial Intelligence product
@@ -26,18 +27,31 @@ public class PlayerMovement : MonoBehaviour
         characterController = GetComponent<CharacterController>();
     }
 
+    float timer = 0f;
+
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+        timer += Time.deltaTime;
+
         if (horizontalInput == 0 && verticalInput == 0)
         {
             isPlayerStop = true;
+            GameObject.Find("AudioManager").GetComponent<GestionSonidosAmbientales>().fuenteAudio.Pause();
         }
         else
         {
             isPlayerStop = false;
+
+            if(timer > 2.5f)
+            {
+                Debug.Log("Entre");
+                GameObject.Find("AudioManager").GetComponent<GestionSonidosAmbientales>().OneShotClipSteeps();
+                timer = 0f;
+            }
+            
         }
 
         float speed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;
@@ -88,6 +102,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject.Find("Player").GetComponent<PlayerHealth>().Die();
+    }
+
+    IEnumerator WaitClip()
+    {
+        yield return new WaitForSeconds(2f);
+        GameObject.Find("AudioManager").GetComponent<GestionSonidosAmbientales>().ReproducirSonido(0);
     }
 }
 

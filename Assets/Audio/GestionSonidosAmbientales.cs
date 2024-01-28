@@ -63,4 +63,13 @@ public class GestionSonidosAmbientales : MonoBehaviour
     {
         fuenteAudio.pitch = tono;
     }
+
+    public void OneShotClipSteeps()
+    {
+        int inx = Random.Range(0, 5);
+
+        AjustarVolumen(0.5f);
+        sonidoActual = inx;
+        fuenteAudio.PlayOneShot(sonidosAmbientales[sonidoActual]);
+    }
 }
