@@ -390,6 +390,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff320e1b65eed094f8c25d452ced7b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnWater3Platform: 0
+  timeOnPlatform: 0
+  MaximumTimeOnPlatform: 3
+  health: 100
 --- !u!1 &840918363
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +677,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff320e1b65eed094f8c25d452ced7b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnWater3Platform: 0
+  timeOnPlatform: 0
+  MaximumTimeOnPlatform: 3
+  health: 100
 --- !u!1 &1558689747
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff320e1b65eed094f8c25d452ced7b8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOnWater3Platform: 0
+  timeOnPlatform: 0
+  MaximumTimeOnPlatform: 3
+  health: 100
 --- !u!1 &1958668285
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ public class Drownedinwater : MonoBehaviour
     public float timeOnPlatform = 0f;
     public float MaximumTimeOnPlatform = 3f;
     public float health = 100f;
+
+
+
     private List<string> touchedWater = new List<string>();
 
 
@@ -15,22 +18,27 @@ public class Drownedinwater : MonoBehaviour
     {
         if (isOnWater3Platform)
         {
-            timeOnPlatform += Time.deltaTime;
-            Live(33.3f * Time.deltaTime);
+            timeOnPlatform += Time.deltaTime; // Contando los segundos que se queda en la plataforma 
+
+            // Resta 33.3 puntos de vida por cada segundo en la plataforma Water3
+            healthPlayer(33.3f * Time.deltaTime);
 
             if (timeOnPlatform >= MaximumTimeOnPlatform)
             {
-              
-                timeOnPlatform = 0f; // Reinicia el contador de tiempo
+                // Puedes agregar acciones adicionales cuando el jugador ha estado en la plataforma durante 3 segundos
+                // Por ejemplo, reiniciar el nivel, mostrar un mensaje, etc.
+                Debug.Log("El jugador ha estado en la plataforma Water3 durante 3 segundos");
+                Die();
             }
-            else
-            {
-                timeOnPlatform = 0f;
-            }
-
         }
-        
+        else
+        {
+            // Regenera la vida del jugador inmediatamente al salir del área del trigger
+            Regenerate(100f);
+            timeOnPlatform = 0f; // Reinicia el contador de tiempo al salir del área del trigger
+        }
     }
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -83,10 +91,8 @@ public class Drownedinwater : MonoBehaviour
         }
      else if(tagWater == "Water3")
         {
-
             Debug.Log("aqui va la llamada de la funcion del sonido y  la llamada a la la funcion que resetea la vida del jugador ");
             isOnWater3Platform = true;
-            Live(33.3f);
         }
     }
 
@@ -111,16 +117,35 @@ public class Drownedinwater : MonoBehaviour
         }
     }
 
-    void Live(float amount)
+  
+
+    public void healthPlayer(float amountDisminucion)
     {
-        health -= Mathf.RoundToInt(amount); 
+
+        health -= amountDisminucion;
         Debug.Log("Vida del jugador reducida a: " + health);
 
-        if(health <= 0)
+        if (health <= 0)
         {
-            Debug.Log("Vida del jugador reseteada");
-            //se agrega lo que pasa cuando el jugador muere 
+            Die();
         }
-       
     }
+
+    void Regenerate(float amount)
+    {
+        if (isOnWater3Platform)
+        {
+            health = Mathf.Min(health + amount, 100f); // Regenera la vida del jugador al 100%
+            Debug.Log("Vida del jugador regenerada a: " + health);
+        }
+    }
+
+    void Die()
+    {
+        // Coloca aquí el código para manejar la muerte del jugador
+        Debug.Log("El jugador ha muerto");
+        // Puedes agregar lógica adicional aquí, como reiniciar el nivel, mostrar un mensaje, etc.
+    }
+
+
 }
