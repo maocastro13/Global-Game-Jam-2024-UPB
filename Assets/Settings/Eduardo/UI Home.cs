@@ -21,6 +21,6 @@ public class UIHome : MonoBehaviour
 
     public void GoToGameScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

@@ -13,11 +13,11 @@ public class GestionSonidosAmbientales : MonoBehaviour
             fuenteAudio = GetComponent<AudioSource>();
 
         // Configurar la fuente de audio para reproducir en bucle
-        fuenteAudio.loop = true;
+        //fuenteAudio.loop = true;
 
         // Cargar el primer sonido ambiental
-        fuenteAudio.clip = sonidosAmbientales[sonidoActual];
-        fuenteAudio.Play();
+        //fuenteAudio.clip = sonidosAmbientales[sonidoActual];
+        //fuenteAudio.Play();
     }
 
     // Cambiar al siguiente sonido ambiental
@@ -48,8 +48,9 @@ public class GestionSonidosAmbientales : MonoBehaviour
         if (indice < 0 || indice >= sonidosAmbientales.Length) return;  // Índice fuera de rango
 
         sonidoActual = indice;
-        fuenteAudio.clip = sonidosAmbientales[sonidoActual];
-        fuenteAudio.Play();
+        //fuenteAudio.clip = sonidosAmbientales[sonidoActual];
+        //fuenteAudio.Play();
+        fuenteAudio.PlayOneShot(sonidosAmbientales[sonidoActual]);
     }
 
     // Ajustar el volumen de los sonidos ambientales
@@ -64,12 +65,12 @@ public class GestionSonidosAmbientales : MonoBehaviour
         fuenteAudio.pitch = tono;
     }
 
-    public void OneShotClipSteeps()
+    /*public void OneShotClipSteeps()
     {
         int inx = Random.Range(0, 5);
 
         AjustarVolumen(0.5f);
         sonidoActual = inx;
-        fuenteAudio.PlayOneShot(sonidosAmbientales[sonidoActual]);
-    }
+        fuenteAudio.PlayOneShot(sonidosAmbientales[3]);
+    }*/
 }

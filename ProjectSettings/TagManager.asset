@@ -10,6 +10,7 @@ TagManager:
   - Wall1
   - Wall
   - WaterSounds
+  - InitialRun
   layers:
   - Default
   - TransparentFX
