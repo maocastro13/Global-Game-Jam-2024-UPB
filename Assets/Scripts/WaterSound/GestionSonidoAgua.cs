@@ -20,6 +20,11 @@ public class GestionSonidoAgua : MonoBehaviour
 
     public static GestionSonidoAgua Instance;
 
+    private void Awake()
+    {
+      Instance = this;
+    }
+
     public void EntraZonaAgua(AudioSource fuenteAudio, List<bool> listaBoolsFuenteAudio)
     {
         if(listaBoolsFuenteAudio == null)
